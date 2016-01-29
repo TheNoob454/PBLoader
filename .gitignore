@@ -1,0 +1,17 @@
+# Visual studio SUO file
+.suo
+
+# Build directories
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Bb]uild/
+[Oo]bj/
+
+# Documentation
+Docs/
+Help/
+.shfbproj
+
+# NuGet Packages
+packages/*
