@@ -3,7 +3,7 @@ A mod loader for Planetbase
 
 Folder structure
 ---------
-_Releases_ contains all of the released versions\
+_Releases_ contains all of the released versions
 _PBLoader_ contains the source for the mod loader
 
 **Tools:**
