@@ -34,7 +34,7 @@ namespace PBLoader
 		/// <summary>
 		/// The current version of the ModLoader.
 		/// </summary>
-		public static string Version = "0.1.0";
+		public static string Version = "0.1";
 
 		/// <summary>
 		/// The folder where all Mods are stored.
@@ -96,7 +96,6 @@ namespace PBLoader
 			ModConsole.Print("Done loading");
 		}
 
-
 		/// <summary>
 		/// Load all mods in the "mods" folder.
 		/// </summary>
@@ -144,7 +143,6 @@ namespace PBLoader
 			}
 		}
 
-
 		/// <summary>
 		/// Load a Mod.
 		/// </summary>
@@ -188,7 +186,7 @@ namespace PBLoader
 			// Display some things
 			if (Game.GetGameState() == Game.States.Title)
 			{
-				GUI.Label(new Rect(10, 10, 200, 100), "PBModLoader\nVersion " + Version);
+				GUI.Label(new Rect(10, 10, 200, 100), "PBLoader\nVersion " + Version);
 
 				if (GUI.Button(new Rect(10, 50, 100, 25), "Settings"))
 				{
