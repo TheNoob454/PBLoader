@@ -15,3 +15,6 @@ Help/
 
 # NuGet Packages
 packages/*
+
+# Other
+Ignore/*
