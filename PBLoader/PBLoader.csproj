@@ -52,6 +52,7 @@
     <Compile Include="Commands\CommandHelp.cs" />
     <Compile Include="ConsoleCommand.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GameUtil.cs" />
     <Compile Include="Keybind.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModConsole.cs" />

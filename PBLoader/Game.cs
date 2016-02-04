@@ -21,74 +21,55 @@ namespace PBLoader
 		/// <summary>
 		/// Resources in Planetbase.
 		/// </summary>
-		public enum Resources { Bioplastic, Coins, Gun, Meal, MedicalSupplies, Metal, Ore, Spares, Starch, Vegetables, Vitromeat, None }
+		public static Dictionary<string, ResourceType> Resources = new Dictionary<string, ResourceType>()
+		{
+			{ "Bioplastic", ResourceTypeList.BioplasticInstance },
+			{ "Coins", ResourceTypeList.CoinsInstance },
+			{ "Gun", ResourceTypeList.GunInstance },
+			{ "Meal", ResourceTypeList.MealInstance },
+			{ "MedicalSupplies", ResourceTypeList.MealInstance },
+			{ "Metal", ResourceTypeList.MetalInstance },
+			{ "Ore", ResourceTypeList.OreInstance },
+			{ "Spares", ResourceTypeList.SparesInstance },
+			{ "Starch", ResourceTypeList.StarchInstance },
+			{ "Vegetables", ResourceTypeList.VegetablesInstance },
+			{ "Vitromeat", ResourceTypeList.VitromeatInstance }
+		};
 
 		/// <summary>
-		/// Return private field from class.
+		/// Returns resource with name
 		/// </summary>
-		/// <typeparam name="T">The type of field to get.</typeparam>
-		/// <param name="instance">The instance of the class to get the field from.</param>
-		/// <param name="name">The name of the private field.</param>
-		/// <returns>Private field from class.</returns>
-		public static T GetPrivateField<T>(object instance, string name)
+		/// <param name="name">Name of the resource</param>
+		/// <returns>Resource with name provided</returns>
+		public static ResourceType GetResource(string name)
 		{
-			FieldInfo var = instance.GetType().GetField(name, BindingFlags.NonPublic | BindingFlags.Instance);
-			return (T)var.GetValue(instance);
+			ResourceType val = null;
+
+			if (Resources.TryGetValue(name, out val))
+			{
+				return val;
+			}
+			else
+			{
+				return null;
+			}
 		}
 
 		/// <summary>
-		/// Return resource instance.
+		/// Returns resource name (If it's registered)
 		/// </summary>
-		/// <param name="res">Resource to return instance for.</param>
-		/// <returns>Resource instance.</returns>
-		public static ResourceType GetResource(Resources res)
+		/// <param name="resType">The resource</param>
+		/// <returns>The name of the resource</returns>
+		public static string GetResourceName(ResourceType resType)
 		{
-			if (res == Resources.Bioplastic)
+			var res = Resources.First(x => x.Value == resType);
+
+			if (!res.Equals(new KeyValuePair<string, ResourceType>()))
 			{
-				return ResourceTypeList.BioplasticInstance;
-			}
-			else if (res == Resources.Coins)
-			{
-				return ResourceTypeList.CoinsInstance;
-			}
-			else if (res == Resources.Gun)
-			{
-				return ResourceTypeList.GunInstance;
-			}
-			else if (res == Resources.Meal)
-			{
-				return ResourceTypeList.MealInstance;
-			}
-			else if (res == Resources.MedicalSupplies)
-			{
-				return ResourceTypeList.MedicalSuppliesInstance;
-			}
-			else if (res == Resources.Metal)
-			{
-				return ResourceTypeList.MetalInstance;
-			}
-			else if (res == Resources.Ore)
-			{
-				return ResourceTypeList.OreInstance;
-			}
-			else if (res == Resources.Spares)
-			{
-				return ResourceTypeList.SparesInstance;
-			}
-			else if (res == Resources.Starch)
-			{
-				return ResourceTypeList.StarchInstance;
-			}
-			else if (res == Resources.Vegetables)
-			{
-				return ResourceTypeList.VegetablesInstance;
-			}
-			else if (res == Resources.Vitromeat)
-			{
-				return ResourceTypeList.VitromeatInstance;
+				return res.Key;
 			}
 
-			return null;
+			return "None";
 		}
 
 		/// <summary>
