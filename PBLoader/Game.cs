@@ -62,11 +62,12 @@ namespace PBLoader
 		/// <returns>The name of the resource</returns>
 		public static string GetResourceName(ResourceType resType)
 		{
-			var res = Resources.First(x => x.Value == resType);
-
-			if (!res.Equals(new KeyValuePair<string, ResourceType>()))
+			foreach (var res in Resources)
 			{
-				return res.Key;
+				if (res.Value == resType)
+				{
+					return res.Key;
+				}
 			}
 
 			return "None";
