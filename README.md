@@ -11,7 +11,7 @@ _PBLoader_ contains the source for the mod loader
 
 Installation
 ------------
-1. Download the latest release of PBLoader
+1. Download the latest release of PBLoader from [here](https://github.com/TheNoob454/PBLoader/releases)
 2. Navigate to your Planetbase install directory (Most likely {Steam install dir}\steamapps\common\Planetbase)
 3. Place PBLoader.dll in that folder
 4. Navigate to your Planetbase_Data folder ({Steam install dir}\steamapps\common\Planetbase\Planetbase_Data)
