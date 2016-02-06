@@ -15,7 +15,7 @@ namespace CheatMod
 		public override string ID { get { return "CheatMod"; } }
 		public override string Name { get { return "Cheat Mod"; } }
 		public override string Author { get { return "sfoy"; } }
-		public override string Version { get { return "1.0.0"; } }
+		public override string Version { get { return "0.1.0"; } }
 
 		private int menuState = 0;
 		private int spawnAmount = 1;
